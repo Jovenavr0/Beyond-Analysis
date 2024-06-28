@@ -15,7 +15,7 @@ export const navigations = [
   {
     name: "Charts",
     icon: "trending_up",
-    path: "/charts/charts"
+    path: "/charts"
   },
   {
     name: "Table",

@@ -1,14 +1,10 @@
-import { Box, styled, useTheme } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
-import Breadcrumb from "app/components/Breadcrumb";
 import SimpleCard from "app/components/SimpleCard";
 
-import AreaChart from "./AreaChart";
-import LineChart from "./LineChart";
 import SaleInDay from "./saleinday";
 import PieSaLe from "./salemarketPie";
 import SaleCategory from "./saleincategory";
-import ComparisonChart from "./ComparisonChart";
 
 // STYLED COMPONENT
 const Container = styled("div")(({ theme }) => ({
@@ -18,7 +14,6 @@ const Container = styled("div")(({ theme }) => ({
 }));
 
 export default function AppEchart() {
-  const theme = useTheme();
 
   return (
     <Container>
