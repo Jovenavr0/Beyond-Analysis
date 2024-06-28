@@ -21,40 +21,58 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
   {
-    name: "john doe",
-    date: "18 january, 2019",
-    status: "close",
-    company: "ABC Fintech LTD."
+    id: 27,
+    count: 48,
+    market: 1,
+    rating: 5.0
   },
   {
-    name: "kessy bryan",
-    date: "10 january, 2019",
-    status: "open",
-    company: "My Fintech LTD."
+    id: 85,
+    count: 8,
+    market: 1,
+    rating: 5.0
   },
   {
-    name: "james cassegne",
-    date: "8 january, 2019",
-    status: "close",
-    company: "Collboy Tech LTD."
+    id: 87,
+    count: 42,
+    market: 4,
+    rating: 5.0
   },
   {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    status: "open",
-    company: "ABC Fintech LTD."
+    id: 182,
+    count: 15,
+    market: 1,
+    rating: 5.0
   },
   {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    status: "open",
-    company: "ABC Fintech LTD."
+    id: 204,
+    count: 34,
+    market: 3,
+    rating: 5.0
   },
   {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    status: "open",
-    company: "ABC Fintech LTD."
+    id: 17,
+    count: 9,
+    market: 1,
+    rating: 4.9
+  },
+  {
+    id: 46,
+    count: 45,
+    market: 2,
+    rating: 4.9,
+  },
+  {
+    id: 96,
+    count: 4,
+    market: 1,
+    rating: 4.9
+  },
+  {
+    id: 99,
+    count: 0,
+    market: 3,
+    rating: 4.9
   }
 ];
 
@@ -72,12 +90,12 @@ export default function SimpleTable() {
         </TableHead>
 
         <TableBody>
-          {subscribarList.map((subscriber, index) => (
-            <TableRow key={index}>
-              <TableCell align="left">{subscriber.name}</TableCell>
-              <TableCell align="center">{subscriber.company}</TableCell>
-              <TableCell align="center">{subscriber.date}</TableCell>
-              <TableCell align="center">{subscriber.status}</TableCell>
+          {subscribarList.map((subscriber, id) => (
+            <TableRow key={id}>
+              <TableCell align="left">{subscriber.id}</TableCell>
+              <TableCell align="center">{subscriber.count}</TableCell>
+              <TableCell align="center">{subscriber.market}</TableCell>
+              <TableCell align="center">{subscriber.rating}</TableCell>
             </TableRow>
           ))}
         </TableBody>
