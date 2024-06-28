@@ -31,10 +31,6 @@ export default function Brand({ children }) {
           Beyond Analysis
         </StyledSpan>
       </Box>
-
-      <Box className="sidenavHoverShow" sx={{ display: mode === "compact" ? "none" : "block" }}>
-        {children || null}
-      </Box>
       
     </BrandRoot>
   );
