@@ -9,14 +9,14 @@ import MatxLayout from "./components/MatxLayout/MatxLayout";
 
 import materialRoutes from "app/views/material-kit/MaterialRoutes";
 
-// SESSION PAGES
+
 const NotFound = Loadable(lazy(() => import("app/views/sessions/NotFound")));
 const JwtLogin = Loadable(lazy(() => import("app/views/sessions/JwtLogin")));
 const JwtRegister = Loadable(lazy(() => import("app/views/sessions/JwtRegister")));
 const ForgotPassword = Loadable(lazy(() => import("app/views/sessions/ForgotPassword")));
-// E-CHART PAGE
+
 const AppEchart = Loadable(lazy(() => import("app/views/charts/echarts/AppEchart")));
-// DASHBOARD PAGE
+
 const Analytics = Loadable(lazy(() => import("app/views/dashboard/Analytics")));
 
 const routes = [
@@ -28,14 +28,14 @@ const routes = [
     ),
     children: [
       ...materialRoutes,
-      // dashboard route
+      
       { path: "/dashboard", element: <Analytics />, auth: authRoles.admin },
-      // e-chart route
+      
       { path: "/charts", element: <AppEchart />, auth: authRoles.editor }
     ]
   },
 
-  // session pages route
+  
   { path: "/session/404", element: <NotFound /> },
   { path: "/session/signin", element: <JwtLogin /> },
   { path: "/session/signup", element: <JwtRegister /> },

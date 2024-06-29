@@ -3,6 +3,7 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { Card, Grid, styled, Button } from "@mui/material";
+import { convertHexToRGB } from "app/utils/utils";
 import RowCards from "./shared/RowCards";
 import StatCards from "./shared/StatCards";
 import StatCards2 from "./shared/StatCards2";
@@ -24,6 +25,13 @@ const H4 = styled("h4")(({ theme }) => ({
 
 const StyledButton = styled(Button)(({ theme }) => ({
   margin: theme.spacing(1)
+}));
+
+const CardRoot = styled(Card)(({ theme }) => ({
+  marginBottom: "24px",
+  textAlign: "center",
+  padding: "24px !important",
+  [theme.breakpoints.down("sm")]: { paddingLeft: "16px !important" }
 }));
 
 export default function Analytics() {
@@ -85,15 +93,17 @@ export default function Analytics() {
           </Grid>
 
           <Grid item lg={4} md={4} sm={12} xs={12}>
-            <Card sx={{ px: 3, py: 2, mb: 3 }}>
+            
+            <CardRoot>  
               
-            <DateRange
-            editableDateInputs={true}
-            onChange={item => setState([item.selection])}
-            moveRangeOnFirstSelection={false}
-            ranges={state}
-            />
-            </Card>
+              <DateRange
+              editableDateInputs={true}
+              onChange={item => setState([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={state}
+              />
+
+            </CardRoot>
 
             <UpgradeCard />
 

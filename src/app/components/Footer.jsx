@@ -4,7 +4,7 @@ import { Paragraph, Span } from "./Typography";
 import useSettings from "app/hooks/useSettings";
 import { topBarHeight } from "app/utils/constant";
 
-// STYLED COMPONENTS
+
 const AppFooter = styled(Toolbar)(() => ({
   display: "flex",
   alignItems: "center",
