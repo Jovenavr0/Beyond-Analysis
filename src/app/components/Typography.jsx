@@ -195,22 +195,3 @@ export const Span = ({ children, className, ellipsis, ...props }) => {
     </StyledBox>
   );
 };
-
-/**
- * @typedef {import("@mui/material").BoxProps} Other
- * @param {Other & {ellipsis: boolean}}
- * @returns {JSX.Element}
- */
-export const Tiny = ({ children, className, ellipsis, ...props }) => {
-  return (
-    <StyledBox
-      fontSize="10px"
-      lineHeight="1.5"
-      component="small"
-      ellipsis={ellipsis}
-      className={clsx({ [className || ""]: true })}
-      {...props}>
-      {children}
-    </StyledBox>
-  );
-};

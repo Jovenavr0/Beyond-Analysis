@@ -1,13 +1,7 @@
-import React, { PureComponent } from "react";
-import { PieChart, Pie, Sector, ResponsiveContainer,Cell } from "recharts";
+import React, {useState} from "react";
+import {Cell, Pie, PieChart, ResponsiveContainer, Sector} from "recharts";
 
-const data = [
-  { name: "DIY", value: 586.533378 },
-  { name: "FASHION", value: 1000.954255  },
-  { name: "FMCG", value: 520.132064 },
-  { name: "KIDS", value: 524.987371  },
-  { name: "PHARMA", value: 743.460782 },
-];
+
 const COLORS = ['#125fb3', '#9855ea', '#ea555d', '#a7ea55','#55eae2'];
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -55,26 +49,22 @@ const renderActiveShape = (props) => {
   );
 };
 
-export default class SaleCategory extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/pie-chart-with-customized-active-shape-y93si";
-
-  state = {
-    activeIndex: 0,
-  };
-
-  onPieEnter = (_, index) => {
-    this.setState({
-      activeIndex: index,
+export default function SaleCategory({data}) {
+    const [state, setState] = useState({
+        activeIndex: 0,
     });
-  };
+    const onPieEnter = (_, index) => {
+        setState({
+            activeIndex: index,
+        });
+    };
 
-  render() {
     return (
       <div className="salePieMarket">
         <ResponsiveContainer width="100%" aspect={2}>
           <PieChart width={600} height={600}>
             <Pie
-              activeIndex={this.state.activeIndex}
+              activeIndex={state.activeIndex}
               activeShape={renderActiveShape}
               data={data}
               cx="50%"
@@ -82,7 +72,7 @@ export default class SaleCategory extends PureComponent {
               innerRadius={140}
               outerRadius={180}
               dataKey="value"
-              onMouseEnter={this.onPieEnter}
+              onMouseEnter={onPieEnter}
             >
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -92,5 +82,4 @@ export default class SaleCategory extends PureComponent {
         </ResponsiveContainer>
       </div>
     );
-  }
 }
